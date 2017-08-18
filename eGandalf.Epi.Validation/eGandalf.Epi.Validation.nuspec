@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>eGandalf.Epi.Validation</id>
+    <version>1.0.3</version>
+    <authors>James Stout (@egandalf)</authors>
+    <owners>Episerver</owners>
+    <projectUrl>https://github.com/egandalf/eGandalf.Epi.Validation</projectUrl>
+    <iconUrl>http://2.bp.blogspot.com/-XP05TFuM8_o/V__1KyDB5mI/AAAAAAAAH0c/ltOfeZjaDjQqNB0YEvSARWl6ZGQjdk7ugCK4B/s80/egandalf.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A series of attribute-based validators for Episerver Page, Block, and Media types.</description>
+    <releaseNotes>Initial release of validation attributes.</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>Validation</tags>
+    <dependencies>
+      <dependency id="EPiServer.CMS.Core" version="10.0.1" />
+    </dependencies>
+  </metadata>
+</package>
