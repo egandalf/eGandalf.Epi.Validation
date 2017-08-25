@@ -29,3 +29,7 @@ The "OfType" validators verify that a content area meets the constraints for a s
 * *MaximumFileSize*
 
 The "Dimensions" attributes should be used for types that can be cast to ImageData.
+
+## eGandalf.Epi.Validation.Text
+
+* *DoesNotContain* - Ensures the given text is not present within the field. Case insensitive.
