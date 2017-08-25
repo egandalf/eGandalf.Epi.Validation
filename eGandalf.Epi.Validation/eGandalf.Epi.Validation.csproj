@@ -36,9 +36,6 @@
     <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="eGandalf.Epi.Helpers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\eGandalf.Epi.Helpers.1.0.1\lib\net452\eGandalf.Epi.Helpers.dll</HintPath>
-    </Reference>
     <Reference Include="EPiServer, Version=10.0.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <HintPath>..\packages\EPiServer.CMS.Core.10.0.1\lib\net45\EPiServer.dll</HintPath>
     </Reference>
@@ -125,6 +122,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="General\RequiredForPublishAttribute.cs" />
+    <Compile Include="Internal\ImageDataMethods.cs" />
     <Compile Include="Lists\ExactCountOfTypeAttribute.cs" />
     <Compile Include="Lists\ExactCountAttribute.cs" />
     <Compile Include="Lists\MaximumAttribute.cs" />

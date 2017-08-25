@@ -2,15 +2,14 @@
 using EPiServer.Core;
 using EPiServer.ServiceLocation;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using eGandalf.Epi.Helpers.File.Image;
+using eGandalf.Epi.Validation.Internal;
 
 namespace eGandalf.Epi.Validation.Media
 {
+    /// <summary>
+    /// Matches a placed image against maximum dimension (width and height) requirements.
+    /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
     public class MaximumDimensionsAttribute : ValidationAttribute
     {
@@ -33,7 +32,7 @@ namespace eGandalf.Epi.Validation.Media
             var mediaContent = _contentRepository.Service.Get<ImageData>(reference);
             if (mediaContent == null) throw new TypeMismatchException("Dimension validation can only be used with Episerver ImageData or inheriting types.");
 
-            using (var image = mediaContent.ToSystemImage())
+            using (var image = ImageDataMethods.ToSystemImage(mediaContent))
             {
                 if (image == null) throw new Exception("Unable to load image file. The file may be unavailable or in an incorrect format.");
                 return image.Width <= this.Width && image.Height <= this.Height;
