@@ -8,14 +8,14 @@ using System.IO;
 namespace eGandalf.Epi.Validation.Media
 {
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class MaxFileSizeAttribute : ValidationAttribute
+    public class MaximumFileSizeAttribute : ValidationAttribute
     {
 
         public long Limit { get; set; }
 
         private long _actualBytes = 0;
 
-        public MaxFileSizeAttribute(long byteLimit)
+        public MaximumFileSizeAttribute(long byteLimit)
         {
             Limit = byteLimit;
         }

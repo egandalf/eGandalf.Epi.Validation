@@ -132,7 +132,7 @@
     <Compile Include="Media\MaximumDimensionsAttribute.cs" />
     <Compile Include="Media\MinimumDimensionsAttribute.cs" />
     <Compile Include="Media\ExactDimensionsAttribute.cs" />
-    <Compile Include="Media\MaxFileSizeAttribute.cs" />
+    <Compile Include="Media\MaximumFileSizeAttribute.cs" />
     <Compile Include="Media\AllowedFileExtensionsAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Text\DoesNotContainAttribute.cs" />
