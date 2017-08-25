@@ -18,7 +18,7 @@ Most of these should be self-explanatory.
 * *MinimumOfType*
 * *MaximumOfType*
 
-The "OfType" validators verify that a content area meets the constraints for a specific type of object. E.g. the StartPage must contain one Carousel > `[ExactCountOfType(typeof(CarouselBlock))]`
+The "OfType" validators verify that a content area meets the constraints for a specific type of object. E.g. the StartPage must contain one Carousel > `[ExactCountOfType(1, typeof(CarouselBlock))]`. Allows multiple.
 
 ## eGandalf.Epi.Validation.Media
 
