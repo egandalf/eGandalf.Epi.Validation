@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>eGandalf.Epi.Validation</id>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
     <authors>James Stout (@egandalf)</authors>
     <owners>Episerver</owners>
     <projectUrl>https://github.com/egandalf/eGandalf.Epi.Validation</projectUrl>

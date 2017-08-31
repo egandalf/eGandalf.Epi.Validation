@@ -91,6 +91,13 @@
           -->
           <errormessage>File referenced in '{0}' is {1} but cannot be larger than {2}.</errormessage>
         </maxfilesize>
+        <doesnotcontain>
+          <!--
+          {0} = property name
+          {1} = value to check
+            -->
+          <errormessage>{0} cannot contain the phrase '{1}'.</errormessage>
+        </doesnotcontain>
       </validation>
       <byteformats>
         <gb>GB</gb>

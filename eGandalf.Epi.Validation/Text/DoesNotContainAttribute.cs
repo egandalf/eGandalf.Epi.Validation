@@ -1,4 +1,5 @@
-﻿using EPiServer.Core;
+﻿using eGandalf.Epi.Validation.Internal;
+using EPiServer.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -27,7 +28,9 @@ namespace eGandalf.Epi.Validation.Text
 
         public override string FormatErrorMessage(string name)
         {
-            return $"{name} cannot contain the '{MatchValue}'.";
+            return ValidationLocalization
+                .GetFormattedErrorMessage("doesnotcontain",
+                new object[] { name, MatchValue });
         }
     }
 }
