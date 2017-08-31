@@ -41,7 +41,9 @@ namespace eGandalf.Epi.Validation.Media
 
         public override string FormatErrorMessage(string name)
         {
-            return $"{name} may only contain an image that is exactly {Width}px wide and {Height}px tall.";
+            return ValidationLocalization
+                .GetFormattedErrorMessage("exactdimensions",
+                new object[] { name, Width, Height });
         }
     }
 }

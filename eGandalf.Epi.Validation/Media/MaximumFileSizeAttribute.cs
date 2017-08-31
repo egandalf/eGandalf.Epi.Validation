@@ -1,5 +1,7 @@
-﻿using EPiServer;
+﻿using eGandalf.Epi.Validation.Internal;
+using EPiServer;
 using EPiServer.Core;
+using EPiServer.Framework.Localization;
 using EPiServer.ServiceLocation;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -56,7 +58,9 @@ namespace eGandalf.Epi.Validation.Media
 
         public override string FormatErrorMessage(string name)
         {
-            return $"File referenced in '{name}' is {FormatBytes(_actualBytes)} but cannot be larger than {FormatBytes(Limit)}.";
+            return ValidationLocalization
+                .GetFormattedErrorMessage("maxfilesize",
+                new object[] { name, FormatBytes(_actualBytes), FormatBytes(Limit) });
         }
 
         const double gb = 2 ^ 30;
@@ -65,10 +69,10 @@ namespace eGandalf.Epi.Validation.Media
 
         private string FormatBytes(long bytes)
         {
-            if (bytes > gb) return $"{Math.Round(bytes / gb, 2)} GB";
-            if (bytes > mb) return $"{Math.Round(bytes / mb, 2)} MB";
-            if (bytes > kb) return $"{Math.Round(bytes / kb, 2)} KB";
-            return $"{bytes} bytes";
+            if (bytes > gb) return $"{Math.Round(bytes / gb, 2)} {LocalizationService.Current.GetString("/egandalf/byteformats/gb")}";
+            if (bytes > mb) return $"{Math.Round(bytes / mb, 2)} {LocalizationService.Current.GetString("/egandalf/byteformats/mb")}";
+            if (bytes > kb) return $"{Math.Round(bytes / kb, 2)} {LocalizationService.Current.GetString("/egandalf/byteformats/kb")}";
+            return $"{bytes} {LocalizationService.Current.GetString("/egandalf/byteformats/bytes")}";
         }
     }
 }

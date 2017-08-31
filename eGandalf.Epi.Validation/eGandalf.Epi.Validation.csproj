@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>eGandalf.Epi.Validation</RootNamespace>
     <AssemblyName>eGandalf.Epi.Validation</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -123,6 +124,7 @@
   <ItemGroup>
     <Compile Include="General\RequiredForPublishAttribute.cs" />
     <Compile Include="Internal\ImageDataMethods.cs" />
+    <Compile Include="Internal\ValidationLocalization.cs" />
     <Compile Include="Lists\ExactCountOfTypeAttribute.cs" />
     <Compile Include="Lists\ExactCountAttribute.cs" />
     <Compile Include="Lists\MaximumAttribute.cs" />
@@ -140,9 +142,13 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\eGandalf.Epi.Validation.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>nuget pack $(ProjectPath) -IncludeReferencedProjects -OutputDirectory $(SolutionDir)</PostBuildEvent>
+    <PostBuildEvent>nuget pack $(ProjectDir)$(ProjectName).nuspec -OutputDirectory $(SolutionDir)</PostBuildEvent>
   </PropertyGroup>
 </Project>

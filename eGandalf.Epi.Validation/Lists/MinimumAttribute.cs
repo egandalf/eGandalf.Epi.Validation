@@ -2,6 +2,7 @@
 using System.Collections;
 using EPiServer.Core;
 using System.ComponentModel.DataAnnotations;
+using eGandalf.Epi.Validation.Internal;
 
 namespace eGandalf.Epi.Validation.Lists
 {
@@ -40,7 +41,9 @@ namespace eGandalf.Epi.Validation.Lists
 
         public override string FormatErrorMessage(string name)
         {
-            return $"Too few items in '{name}'. Minimum required is {Limit}";
+            return ValidationLocalization
+                .GetFormattedErrorMessage("minimum",
+                new object[] { name, Limit });
         }
     }
 }

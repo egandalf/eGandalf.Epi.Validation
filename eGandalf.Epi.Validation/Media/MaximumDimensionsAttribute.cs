@@ -41,7 +41,9 @@ namespace eGandalf.Epi.Validation.Media
 
         public override string FormatErrorMessage(string name)
         {
-            return $"{name} may only contain an image that is no larger than {Width}px wide and {Height}px tall.";
+            return ValidationLocalization
+                .GetFormattedErrorMessage("maximumdimensions",
+                new object[] { name, Width, Height });
         }
     }
 }

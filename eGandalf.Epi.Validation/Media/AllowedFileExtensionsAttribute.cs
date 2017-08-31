@@ -1,4 +1,5 @@
-﻿using EPiServer;
+﻿using eGandalf.Epi.Validation.Internal;
+using EPiServer;
 using EPiServer.Core;
 using EPiServer.ServiceLocation;
 using System;
@@ -68,7 +69,9 @@ namespace eGandalf.Epi.Validation.Media
 
         public override string FormatErrorMessage(string name)
         {
-            return $"Files placed in '{name}' must be of one of these types: {string.Join(", ", AllowedExtensions)}";
+            return ValidationLocalization
+                .GetFormattedErrorMessage("allowedfileextensions",
+                new object[] { name, string.Join(", ", AllowedExtensions) });
         }
 
         private void PopulateExtensionsFromArray(string[] extensionsArray)

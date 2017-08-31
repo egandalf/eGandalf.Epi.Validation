@@ -1,4 +1,5 @@
-﻿using EPiServer;
+﻿using eGandalf.Epi.Validation.Internal;
+using EPiServer;
 using EPiServer.Core;
 using EPiServer.ServiceLocation;
 using System;
@@ -41,11 +42,10 @@ namespace eGandalf.Epi.Validation.Lists
                 if (CanLoadContentByType(item.ContentLink))
                 {
                     typeCount++;
-                    // Return as soon as the validation is false.
-                    if (typeCount >= Limit) return false;
+                    if (typeCount > Limit) return false;
                 }
             }
-            return true;
+            return typeCount <= Limit;
         }
 
         private bool CanLoadContentByType(ContentReference reference)
@@ -68,7 +68,9 @@ namespace eGandalf.Epi.Validation.Lists
 
         public override string FormatErrorMessage(string name)
         {
-            return $"ContentArea '{name}' may include a maximum of {Limit} items of type {ObjectType.Name}";
+            return ValidationLocalization
+                .GetFormattedErrorMessage("maximumoftype", 
+                new object[] { name, Limit, ObjectType.Name });
         }
     }
 }

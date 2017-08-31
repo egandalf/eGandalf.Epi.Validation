@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+  <language name="English" id="en">
+    <egandalf>
+      <validation>
+        <requiredforpublish>
+          <!-- {0} = property name -->
+          <errormessage>{0} cannot be empty.</errormessage>
+        </requiredforpublish>
+        <exactcount>
+          <!--
+          {0} = property name
+          {1} = integer limit setting
+          -->
+          <errormessage>Property '{0}' must contain exactly {1} items.</errormessage>
+        </exactcount>
+        <exactcountoftype>
+          <!--
+          {0} = property name
+          {1} = integer limit setting
+          {2} = object type name
+          -->
+          <errormessage>Property '{0}' must contain exactly {1} items of type {2}.</errormessage>
+        </exactcountoftype>
+        <maximum>
+          <!--
+          {0} = property name
+          {1} = integer limit setting
+          -->
+          <errormessage>Too many items in '{0}'. Maximum allowed is {1}.</errormessage>
+        </maximum>
+        <maximumoftype>
+          <!--
+          {0} = property name
+          {1} = integer limit setting
+          {2} = object type name
+          -->
+          <errormessage>ContentArea '{0}' may include a maximum of {1} items of type {2}.</errormessage>
+        </maximumoftype>
+        <minimum>
+          <!--
+          {0} = property name
+          {1} = integer limit setting
+          -->
+          <errormessage>Too few items in '{0}'. Minimum required is {1}.</errormessage>
+        </minimum>
+        <minimumoftype>
+          <!--
+          {0} = property name
+          {1} = integer limit setting
+          {2} = object type name
+          -->
+          <errormessage>ContentArea '{0}' must include at least {1} items of type {2}.</errormessage>
+        </minimumoftype>
+        <allowedfileextensions>
+          <!--
+          {0} = property name
+          {1} = extensions list
+          -->
+          <errormessage>Files placed in '{0}' must be of one of these types: {1}</errormessage>
+        </allowedfileextensions>
+        <exactdimensions>
+          <!--
+          {0} = property name
+          {1} = width
+          {2} = height
+          -->
+          <errormessage>{0} may only contain an image that is exactly {1}px wide and {2}px tall.</errormessage>
+        </exactdimensions>
+        <maximumdimensions>
+          <!--
+          {0} = property name
+          {1} = width
+          {2} = height
+          -->
+          <errormessage>{0} may only contain an image that is no larger than {1}px wide and {2}px tall.</errormessage>
+        </maximumdimensions>
+        <minimumdimensions>
+          <!--
+          {0} = property name
+          {1} = width
+          {2} = height
+          -->
+          <errormessage>{0} may only contain an image that is at least {1}px wide and {2}px tall.</errormessage>
+        </minimumdimensions>
+        <maxfilesize>
+          <!--
+          {0} = property name
+          {1} = actual file size
+          {2} = file size limit
+          -->
+          <errormessage>File referenced in '{0}' is {1} but cannot be larger than {2}.</errormessage>
+        </maxfilesize>
+      </validation>
+      <byteformats>
+        <gb>GB</gb>
+        <mb>MB</mb>
+        <kb>KB</kb>
+        <bytes>bytes</bytes>
+      </byteformats>
+    </egandalf>
+  </language>
+</languages>

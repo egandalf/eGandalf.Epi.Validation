@@ -2,6 +2,7 @@
 using System.Collections;
 using EPiServer.Core;
 using System.ComponentModel.DataAnnotations;
+using eGandalf.Epi.Validation.Internal;
 
 namespace eGandalf.Epi.Validation.Lists
 {
@@ -39,7 +40,7 @@ namespace eGandalf.Epi.Validation.Lists
 
         public override string FormatErrorMessage(string name)
         {
-            return $"Too many items in '{name}'. Maximum required is {Limit}";
+            return ValidationLocalization.GetFormattedErrorMessage("maximum", new object[] { name, Limit });
         }
     }
 }

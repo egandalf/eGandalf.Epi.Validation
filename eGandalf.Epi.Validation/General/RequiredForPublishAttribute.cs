@@ -1,11 +1,9 @@
-﻿using EPiServer.Core;
+﻿using eGandalf.Epi.Validation.Internal;
+using EPiServer.Core;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace eGandalf.Epi.Validation.General
 {
@@ -34,7 +32,7 @@ namespace eGandalf.Epi.Validation.General
 
         public override string FormatErrorMessage(string name)
         {
-            return $"{name} cannot be empty.";
+            return ValidationLocalization.GetFormattedErrorMessage("requiredforpublish", new[] { name });
         }
     }
 }

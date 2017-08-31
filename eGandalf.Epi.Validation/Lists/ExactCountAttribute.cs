@@ -1,4 +1,6 @@
-﻿using EPiServer.Core;
+﻿using eGandalf.Epi.Validation.Internal;
+using EPiServer.Core;
+using EPiServer.Framework.Localization;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -41,7 +43,7 @@ namespace eGandalf.Epi.Validation.Lists
 
         public override string FormatErrorMessage(string name)
         {
-            return $"Property '{name}' must contain exactly {Limit} items.";
+            return ValidationLocalization.GetFormattedErrorMessage("exactcount", new object[] { name, Limit });
         }
     }
 }

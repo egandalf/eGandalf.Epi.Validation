@@ -2,18 +2,23 @@
 <package >
   <metadata>
     <id>eGandalf.Epi.Validation</id>
-    <version>1.0.6</version>
+    <version>1.1.1</version>
     <authors>James Stout (@egandalf)</authors>
     <owners>Episerver</owners>
     <projectUrl>https://github.com/egandalf/eGandalf.Epi.Validation</projectUrl>
     <iconUrl>http://2.bp.blogspot.com/-XP05TFuM8_o/V__1KyDB5mI/AAAAAAAAH0c/ltOfeZjaDjQqNB0YEvSARWl6ZGQjdk7ugCK4B/s80/egandalf.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A series of attribute-based validators for Episerver Page, Block, and Media types.</description>
-    <releaseNotes>Initial release of validation attributes.</releaseNotes>
+    <releaseNotes>Added translation file for error messages. Fixed bug in MaximumOfType.</releaseNotes>
     <copyright>Copyright 2017</copyright>
     <tags>Validation</tags>
     <dependencies>
       <dependency id="EPiServer.CMS.Core" version="10.0.1" />
+      <dependency id="Castle.Core" version="3.3.3" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="bin/Release/eGandalf.Epi.Validation.dll" target="lib\net45" />
+    <file src="Resources\*.xml" target="content\Resources\LanguageFiles\"/>
+  </files>
 </package>

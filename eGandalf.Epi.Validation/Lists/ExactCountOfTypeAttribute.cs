@@ -1,4 +1,5 @@
-﻿using EPiServer;
+﻿using eGandalf.Epi.Validation.Internal;
+using EPiServer;
 using EPiServer.Core;
 using EPiServer.ServiceLocation;
 using System;
@@ -69,7 +70,7 @@ namespace eGandalf.Epi.Validation.Lists
 
         public override string FormatErrorMessage(string name)
         {
-            return $"Property '{name}' must contain exactly {Limit} items of type {ObjectType.Name}.";
+            return ValidationLocalization.GetFormattedErrorMessage("exactcountoftype", new object[] { name, Limit, ObjectType.Name });
         }
     }
 }
