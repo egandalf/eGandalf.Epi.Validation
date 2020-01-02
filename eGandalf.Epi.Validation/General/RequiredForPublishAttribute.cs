@@ -26,6 +26,7 @@ namespace eGandalf.Epi.Validation.General
             if (value is ContentReference reference) return reference != null && reference != ContentReference.EmptyReference;
             if (value is ContentArea area) return area?.Items?.Any() == true;
             if (value is IEnumerable<object> enumer) return enumer?.Any() == true;
+            if (value is EPiServer.Core.XhtmlString html) return !string.IsNullOrEmpty(html.ToHtmlString());
 
             return false;
         }
